@@ -2,12 +2,20 @@
 <html>
 <head>
 <title>Login Form</title>
+<style type="text/css">
+.center {
+   /*  margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    background-color: #b0e0e6; */
+}
+</style>
 </head>
 <body>
-	<center>
+	<%-- <center> --%>
+	<div align="center">
 		<h2>Login Here</h2>
-		<div
-			style="text-align: center; padding: 30px; border: 1px solid green; width: 250px;">
+		<div  style="text-align: center; padding: 30px; border: 1px solid green; width: 250px;">
 			<form method="post"
 				action="<c:url value='j_spring_security_check' />">
 
@@ -32,6 +40,7 @@
 				</table>
 			</form>
 		</div>
-	</center>
+	</div>
+	<%-- </center> --%>
 </body>
 </html>

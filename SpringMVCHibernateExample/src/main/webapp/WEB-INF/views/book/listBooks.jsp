@@ -40,6 +40,7 @@ th {
 			<h2><a href="persons" id="persons">Go to Persons Page</a></h2>
 		</div>
 		<div>
+			<c:url value="/j_spring_security_logout" var="logoutUrl" />
 			<h3><a href="${logoutUrl}">Logout</a></h3>
 		</div>
 	</div>

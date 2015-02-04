@@ -12,17 +12,33 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.example.spring.model.Person;
 import com.example.spring.service.PersonService;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class PersonController.
+ */
 @Controller
 public class PersonController {
 	
+	/** The person service. */
 	private PersonService personService;
 	
+	/**
+	 * Sets the person service.
+	 *
+	 * @param ps the new person service
+	 */
 	@Autowired(required=true)
 	@Qualifier(value="personService")
 	public void setPersonService(PersonService ps){
 		this.personService = ps;
 	}
 	
+	/**
+	 * List persons.
+	 *
+	 * @param model the model
+	 * @return the string
+	 */
 	@RequestMapping(value = "/persons", method = RequestMethod.GET)
 	public String listPersons(Model model) {
 		model.addAttribute("person", new Person());
@@ -31,6 +47,12 @@ public class PersonController {
 	}
 	
 	//For add and update person both
+	/**
+	 * Adds the person.
+	 *
+	 * @param p the p
+	 * @return the string
+	 */
 	@RequestMapping(value= "/person/add", method = RequestMethod.POST)
 	public String addPerson(@ModelAttribute("person") Person p){
 		
@@ -46,6 +68,13 @@ public class PersonController {
 		
 	}
 	
+	/**
+	 * Edits the person.
+	 *
+	 * @param id the id
+	 * @param model the model
+	 * @return the string
+	 */
 	@RequestMapping("/edit/{id}")
     public String editPerson(@PathVariable("id") int id, Model model){
         model.addAttribute("person", this.personService.getPersonById(id));
@@ -53,6 +82,12 @@ public class PersonController {
         return "person";
     }
 	
+	/**
+	 * Removes the person.
+	 *
+	 * @param id the id
+	 * @return the string
+	 */
 	@RequestMapping("/remove/{id}")
     public String removePerson(@PathVariable("id") int id){
 		

@@ -10,17 +10,31 @@ import org.springframework.stereotype.Repository;
 
 import com.example.spring.model.Person;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class PersonDAOImpl.
+ */
 @Repository
 public class PersonDAOImpl implements PersonDAO {
 	
+	/** The Constant logger. */
 	private static final Logger logger = LoggerFactory.getLogger(PersonDAOImpl.class);
 
+	/** The session factory. */
 	private SessionFactory sessionFactory;
 	
+	/**
+	 * Sets the session factory.
+	 *
+	 * @param sf the new session factory
+	 */
 	public void setSessionFactory(SessionFactory sf){
 		this.sessionFactory = sf;
 	}
 
+	/* (non-Javadoc)
+	 * @see com.example.spring.dao.PersonDAO#addPerson(com.example.spring.model.Person)
+	 */
 	@Override
 	public void addPerson(Person p) {
 		Session session = this.sessionFactory.getCurrentSession();
@@ -28,6 +42,9 @@ public class PersonDAOImpl implements PersonDAO {
 		logger.info("Person saved successfully, Person Details="+p);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.example.spring.dao.PersonDAO#updatePerson(com.example.spring.model.Person)
+	 */
 	@Override
 	public void updatePerson(Person p) {
 		Session session = this.sessionFactory.getCurrentSession();
@@ -35,6 +52,9 @@ public class PersonDAOImpl implements PersonDAO {
 		logger.info("Person updated successfully, Person Details="+p);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.example.spring.dao.PersonDAO#listPersons()
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Person> listPersons() {
@@ -46,6 +66,9 @@ public class PersonDAOImpl implements PersonDAO {
 		return personsList;
 	}
 
+	/* (non-Javadoc)
+	 * @see com.example.spring.dao.PersonDAO#getPersonById(int)
+	 */
 	@Override
 	public Person getPersonById(int id) {
 		Session session = this.sessionFactory.getCurrentSession();		
@@ -54,6 +77,9 @@ public class PersonDAOImpl implements PersonDAO {
 		return p;
 	}
 
+	/* (non-Javadoc)
+	 * @see com.example.spring.dao.PersonDAO#removePerson(int)
+	 */
 	@Override
 	public void removePerson(int id) {
 		Session session = this.sessionFactory.getCurrentSession();

@@ -67,7 +67,8 @@
 	<script src="./resources/tablesorter/js/jquery.tablesorter.pager.js"></script>
 	<script src="./resources/tablesorter/js/jquery.tablesorter.widgets.js"></script>
 
-	<script id="js">$(function(){
+	<!-- <script id="js">$(function(){ -->
+	<script>$(function(){
 
 	// define pager options
 	var pagerOptions = {

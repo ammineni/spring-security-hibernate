@@ -14,6 +14,7 @@
 		<org.aspectj-version>1.7.4</org.aspectj-version>
 		<org.slf4j-version>1.7.5</org.slf4j-version>
 		<hibernate.version>4.3.5.Final</hibernate.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<dependencies>
 		<!-- Spring -->
@@ -185,6 +186,15 @@
                     <downloadJavadocs>true</downloadJavadocs>
                 </configuration>
             </plugin>
+            
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <packagingExcludes>WEB-INF/web.xml</packagingExcludes>
+                </configuration>
+            </plugin>
+            
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
