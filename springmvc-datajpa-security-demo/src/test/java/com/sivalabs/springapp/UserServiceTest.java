@@ -45,11 +45,11 @@ public class UserServiceTest
 	
 	@Test
 	public void createUser() {
-		User user = new User(0, "Siva", "siva@gmail.com", "siva", null);
+		User user = new User(0, "Janardhan", "janardhan.ammineni@gmail.com", "password", null);
 		User savedUser = userService.create(user);
 		User newUser = userService.findUserById(savedUser.getId());
-		assertEquals("Siva", newUser.getName());
-		assertEquals("siva@gmail.com", newUser.getEmail());
+		assertEquals("Janardhan", newUser.getName());
+		assertEquals("janardhan.ammineni@gmail.com", newUser.getEmail());
 	}
 	
 	
